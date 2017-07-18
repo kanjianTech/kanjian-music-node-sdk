@@ -1,0 +1,26 @@
+{
+  "name": "kanjian-music-node-sdk",
+  "version": "1.0.0",
+  "description": "kanjian music node sdk",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test/index.js"
+  },
+  "keywords": [
+    "kanjian",
+    "music",
+    "node",
+    "sdk"
+  ],
+  "author": "zzuieliyaoli@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.81.0",
+    "request-promise-native": "^1.0.4"
+  },
+  "devDependencies": {
+    "eslint": "^4.2.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.7.0"
+  }
+}
