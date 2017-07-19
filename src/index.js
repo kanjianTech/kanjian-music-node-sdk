@@ -44,6 +44,7 @@ class Kanjian {
     };
     const sig = generateSig(this.appSecrect, params);
     params.sig = sig;
+
     return client.get(url, params);
   }
   // 通过基因 id 获取专辑
@@ -60,6 +61,7 @@ class Kanjian {
     };
     const sig = generateSig(that.appSecrect, params);
     params.sig = sig;
+
     return client.get(url, params);
   }
   // 通过基因 id 获取单曲
@@ -76,6 +78,7 @@ class Kanjian {
     };
     const sig = generateSig(that.appSecrect, params);
     params.sig = sig;
+
     return client.get(url, params);
   }
   // 获取音乐人
@@ -92,6 +95,7 @@ class Kanjian {
     };
     const sig = generateSig(that.appSecrect, params);
     params.sig = sig;
+
     return client.get(url, params);
   }
   // 通过音乐人 id 获取专辑
@@ -109,6 +113,7 @@ class Kanjian {
     };
     const sig = generateSig(that.appSecrect, params);
     params.sig = sig;
+
     return client.get(url, params);
   }
   // 通过音乐人 id 获取单曲
@@ -126,6 +131,7 @@ class Kanjian {
     };
     const sig = generateSig(that.appSecrect, params);
     params.sig = sig;
+
     return client.get(url, params);
   }
   // 通过专辑 id 获取专辑详细信息
@@ -140,6 +146,7 @@ class Kanjian {
     };
     const sig = generateSig(that.appSecrect, params);
     params.sig = sig;
+
     return client.get(url, params);
   }
   // 通过单曲列表获取专辑 id
@@ -156,6 +163,7 @@ class Kanjian {
     };
     const sig = generateSig(that.appSecrect, params);
     params.sig = sig;
+
     return client.get(url, params);
   }
   // 通过单曲 id 获取单曲详细信息
@@ -170,6 +178,7 @@ class Kanjian {
     };
     const sig = generateSig(that.appSecrect, params);
     params.sig = sig;
+
     return client.get(url, params);
   }
   // 搜索音乐人
@@ -187,6 +196,7 @@ class Kanjian {
     };
     const sig = generateSig(that.appSecrect, params);
     params.sig = sig;
+
     return client.get(url, params);
   }
   // 搜索专辑
@@ -204,6 +214,7 @@ class Kanjian {
     };
     const sig = generateSig(that.appSecrect, params);
     params.sig = sig;
+
     return client.get(url, params);
   }
   // 搜索单曲
@@ -221,6 +232,7 @@ class Kanjian {
     };
     const sig = generateSig(that.appSecrect, params);
     params.sig = sig;
+
     return client.get(url, params);
   }
 }
