@@ -2,7 +2,7 @@
   "name": "kanjian-music-node-sdk",
   "version": "1.0.0",
   "description": "kanjian music node sdk",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "node ./test/index.js"
   },
