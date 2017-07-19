@@ -1,4 +1,4 @@
-const URL = require('url');
+const { URL } = require('url');
 const client = require('./client');
 
 const { generateSig } = require('./util');
@@ -13,7 +13,7 @@ class Kanjian {
   // 获取 Token
   async getToken() {
     const now = new Date() * 1;
-    const url = URL.resolve(this.serverHost, '/v1/token');
+    const url = new URL('/v1/token', this.serverHost);
     const that = this;
     if ((this.token === null) ||
     (this.token.expires_at && (this.token.expires_at > (now + (10 * 1000))))) {
@@ -32,7 +32,7 @@ class Kanjian {
 
   // 获取基因列表
   async getGenreList(deviceId, page, count) {
-    const url = URL.resolve(this.serverHost, '/v1/genre');
+    const url = new URL('/v1/genre', this.serverHost);
     const token = await this.getToken();
     const that = this;
     const params = {
@@ -49,7 +49,7 @@ class Kanjian {
   }
   // 通过基因 id 获取专辑
   async getAlbumListByGenre(deviceId, page, count, genreId) {
-    const url = URL.resolve(this.serverHost, `/v1/genre/${genreId}/album`);
+    const url = new URL(`/v1/genre/${genreId}/album`, this.serverHost);
     const token = await this.getToken();
     const that = this;
     const params = {
@@ -66,7 +66,7 @@ class Kanjian {
   }
   // 通过基因 id 获取单曲
   async getTrackListByGenre(deviceId, page, count, genreId) {
-    const url = URL.resolve(this.serverHost, `/v1/genre/${genreId}/track`);
+    const url = new URL(`/v1/genre/${genreId}/track`, this.serverHost);
     const token = await this.getToken();
     const that = this;
     const params = {
@@ -83,7 +83,7 @@ class Kanjian {
   }
   // 获取音乐人
   async getArtistList(deviceId, page, count) {
-    const url = URL.resolve(this.serverHost, '/v1/artist');
+    const url = new URL('/v1/artist', this.serverHost);
     const token = await this.getToken();
     const that = this;
     const params = {
@@ -100,7 +100,7 @@ class Kanjian {
   }
   // 通过音乐人 id 获取专辑
   async getAlbumListByArtist(deviceId, page, count, artistId) {
-    const url = URL.resolve(this.serverHost, '/v1/artist');
+    const url = new URL('/v1/artist', this.serverHost);
     const token = await this.getToken();
     const that = this;
     const params = {
@@ -118,7 +118,7 @@ class Kanjian {
   }
   // 通过音乐人 id 获取单曲
   async getTrackListByArtist(deviceId, page, count, artistId) {
-    const url = URL.resolve(this.serverHost, `/v1/artist/${artistId}/track`);
+    const url = new URL(`/v1/artist/${artistId}/track`, this.serverHost);
     const token = await this.getToken();
     const that = this;
     const params = {
@@ -136,7 +136,7 @@ class Kanjian {
   }
   // 通过专辑 id 获取专辑详细信息
   async getAlbumDetail(deviceId, albumId) {
-    const url = URL.resolve(this.serverHost, `/v1/album/${albumId}`);
+    const url = new URL(`/v1/album/${albumId}`, this.serverHost);
     const token = await this.getToken();
     const that = this;
     const params = {
@@ -151,7 +151,7 @@ class Kanjian {
   }
   // 通过单曲列表获取专辑 id
   async getTrackListByAlbum(deviceId, page, count, albumId) {
-    const url = URL.resolve(this.serverHost, `/v1/album/${albumId}/track`);
+    const url = new URL(`/v1/album/${albumId}/track`, this.serverHost);
     const token = await this.getToken();
     const that = this;
     const params = {
@@ -168,7 +168,7 @@ class Kanjian {
   }
   // 通过单曲 id 获取单曲详细信息
   async getTrackDetail(deviceId, trackId) {
-    const url = URL.resolve(this.serverHost, `/v1/track/${trackId}`);
+    const url = new URL(`/v1/track/${trackId}`, this.serverHost);
     const token = await this.getToken();
     const that = this;
     const params = {
@@ -183,7 +183,7 @@ class Kanjian {
   }
   // 搜索音乐人
   async searchArtist(deviceId, page, count, keyword) {
-    const url = URL.resolve(this.serverHost, '/v1/search/artist');
+    const url = new URL('/v1/search/artist', this.serverHost);
     const token = await this.getToken();
     const that = this;
     const params = {
@@ -201,7 +201,7 @@ class Kanjian {
   }
   // 搜索专辑
   async searchAlbum(deviceId, page, count, keyword) {
-    const url = URL.resolve(this.serverHost, '/v1/search/album');
+    const url = new URL('/v1/search/album', this.serverHost);
     const token = await this.getToken();
     const that = this;
     const params = {
@@ -219,7 +219,7 @@ class Kanjian {
   }
   // 搜索单曲
   async searchTrack(deviceId, page, count, keyword) {
-    const url = URL.resolve(this.serverHost, '/v1/search/track');
+    const url = new URL('/v1/search/track', this.serverHost);
     const token = await this.getToken();
     const that = this;
     const params = {
